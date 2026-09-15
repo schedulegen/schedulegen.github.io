@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="ScheduleGen is an integrated planning and scheduling approach for multi-arm demonstration generation."
+    >
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#132522">
+
+    <title>ScheduleGen | Anonymized Project Page</title>
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/schedulegen-overview.png" as="image" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" aria-label="Site header">
+      <div class="header-inner">
+        <a class="wordmark" href="#top" aria-label="ScheduleGen home">
+          <span class="wordmark-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span>ScheduleGen</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#overview">Overview</a>
+          <a href="#abstract">Abstract</a>
+        </nav>
+
+        <p class="review-pill">
+          <span class="review-dot" aria-hidden="true"></span>
+          Anonymous review
+        </p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="paper-title">
+        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span>Anonymized project page</span>
+              <span aria-hidden="true">/</span>
+              <span>Multi-arm robot learning</span>
+            </p>
+
+            <h1 id="paper-title">
+              <span class="title-name">ScheduleGen</span>
+              <span class="title-rest">
+                Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning
+              </span>
+            </h1>
+
+            <p class="hero-summary">
+              Adapting contact-rich skills, planning collision-free transitions, and coordinating robot arms to generate scalable imitation-learning data.
+            </p>
+
+            <div class="author-row">
+              <p class="authors">Anonymous Authors</p>
+              <span class="author-divider" aria-hidden="true"></span>
+              <p class="review-status">Manuscript under double-blind review</p>
+            </div>
+          </div>
+
+          <aside class="workflow" aria-label="Core ScheduleGen workflow">
+            <p class="workflow-label">Core workflow</p>
+            <ol>
+              <li>
+                <span class="step-number">01</span>
+                <span class="step-name">Transfer skills</span>
+              </li>
+              <li>
+                <span class="step-number">02</span>
+                <span class="step-name">Plan motions</span>
+              </li>
+              <li>
+                <span class="step-number">03</span>
+                <span class="step-name">Schedule arms</span>
+              </li>
+              <li>
+                <span class="step-number">04</span>
+                <span class="step-name">Learn policies</span>
+              </li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section class="overview section-shell" id="overview" aria-labelledby="overview-title">
+        <div class="figure-card">
+          <div class="figure-heading">
+            <div>
+              <p class="section-kicker">System overview</p>
+              <h2 id="overview-title">From a few demonstrations to coordinated policies.</h2>
+            </div>
+
+            <a
+              class="figure-link"
+              href="assets/schedulegen-overview.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <span>Open full resolution</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M5.5 14.5 14.5 5.5M7 5.5h7.5V13"></path>
+              </svg>
+            </a>
+          </div>
+
+          <figure>
+            <div class="figure-stage">
+              <img
+                src="assets/schedulegen-overview.png"
+                width="2400"
+                height="995"
+                alt="Pipeline overview. Five real robot demonstrations enter ScheduleGen, which performs skill transfer, motion planning, and joint scheduling. It generates randomized simulation trajectories for imitation learning and a policy that is deployed on a real two-arm robot. Four example panels show long-horizon contact manipulation, challenging reset distributions, cluttered layouts, and a four-arm scenario."
+                fetchpriority="high"
+                decoding="async"
+                aria-describedby="overview-caption"
+              >
+            </div>
+
+            <figcaption id="overview-caption">
+              <span class="caption-index">Figure 1</span>
+              <span>
+                <strong>ScheduleGen overview.</strong> From a small set of source demonstrations, ScheduleGen adapts contact-rich skill demonstrations, plans collision-free connecting motions, and jointly schedules all arms to generate simulation data for multi-arm imitation learning and real deployment. The bottom row highlights long-horizon contact manipulation, challenging reset distributions, cluttered layouts, and multi-arm scenarios.
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="abstract section-shell" id="abstract" aria-labelledby="abstract-title">
+        <div class="section-rail" aria-hidden="true">
+          <span>02</span>
+          <span class="rail-line"></span>
+          <span>Abstract</span>
+        </div>
+
+        <div class="abstract-body">
+          <p class="section-kicker">The paper in brief</p>
+          <h2 id="abstract-title">Abstract</h2>
+
+          <div class="abstract-copy">
+            <p>
+              Multi-arm robot platforms, including bimanual and humanoid robots, have the capability to complete tasks with lower cycle times than single-arm systems, but they are more difficult to safely control due to the presence of multi-arm constraints. Imitation learning from demonstrations is effective for controlling bimanual systems; however, it requires large datasets of demonstrations, which are expensive to collect via teleoperation.
+            </p>
+
+            <p>
+              Automated demonstration generation can alleviate this burden by synthesizing new demonstrations from a handful of source demonstrations, but existing algorithms ignore multi-arm constraints and as a result often induce unsafe and unsuccessful behaviors. We address this limitation by introducing ScheduleGen, an integrated planning &amp; scheduling algorithm for multi-arm demonstration generation. ScheduleGen first plans single-robot behavior that adapts object-centric skill demonstrations and then safely coordinates the robots by framing scheduling as a Mixed Integer Linear Programming (MILP) with constraints evaluated using GPU-accelerated collision checking.
+            </p>
+
+            <p>
+              We evaluate ScheduleGen on 28 simulation task variants, including seven externally authored RoboDojo tasks and settings inaccessible to prior systems; it achieves 79.6% mean data-generation success and trains policies with 65.5% mean success. These policies outperform the DexMimicGen baseline on almost all the tasks and achieve 65&ndash;80% success across five real-world tasks through zero-shot sim-to-real and real-to-sim-to-real transfer.
+            </p>
+          </div>
+
+          <ul class="topic-list" aria-label="Research themes">
+            <li>Skill adaptation</li>
+            <li>Motion planning</li>
+            <li>Joint scheduling</li>
+            <li>Imitation learning</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-mark" aria-hidden="true"></span>
+          <span>ScheduleGen</span>
+        </div>
+
+        <div class="footer-copy">
+          <p>Currently under anonymous double-blind review.</p>
+          <p class="footer-note">Author identities and publication details are withheld during review.</p>
+        </div>
+
+        <a class="back-to-top" href="#top">
+          Back to top
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 15V5M5.5 9.5 10 5l4.5 4.5"></path>
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
