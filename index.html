@@ -9,7 +9,7 @@
     >
     <meta name="robots" content="noindex, nofollow, noarchive">
     <meta name="referrer" content="no-referrer">
-    <meta name="theme-color" content="#132522">
+    <meta name="theme-color" content="#f7f7f5">
 
     <title>ScheduleGen | Anonymized Project Page</title>
 
@@ -22,98 +22,84 @@
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header" aria-label="Site header">
-      <div class="header-inner">
-        <a class="wordmark" href="#top" aria-label="ScheduleGen home">
-          <span class="wordmark-mark" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
+      <div class="nav-shell">
+        <a class="brand" href="#top" aria-label="ScheduleGen home">
+          <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+            <path d="M5 9h26M5 18h26M5 27h26"></path>
+            <circle cx="13" cy="9" r="3"></circle>
+            <circle cx="24" cy="18" r="3"></circle>
+            <circle cx="17" cy="27" r="3"></circle>
+          </svg>
           <span>ScheduleGen</span>
         </a>
 
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#overview">Overview</a>
+          <a href="#highlights">Highlights</a>
           <a href="#abstract">Abstract</a>
         </nav>
 
-        <p class="review-pill">
-          <span class="review-dot" aria-hidden="true"></span>
-          Anonymous review
+        <p class="review-chip">
+          <span aria-hidden="true"></span>
+          <span class="review-chip-long">Anonymous double-blind review</span>
+          <span class="review-chip-short">Anonymous review</span>
         </p>
       </div>
     </header>
 
     <main id="main-content">
       <section class="hero" id="top" aria-labelledby="paper-title">
-        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
-        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow glow-one" aria-hidden="true"></div>
+        <div class="hero-glow glow-two" aria-hidden="true"></div>
 
-        <div class="hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow">
-              <span>Anonymized project page</span>
-              <span aria-hidden="true">/</span>
-              <span>Multi-arm robot learning</span>
-            </p>
+        <div class="page-shell hero-content">
+          <p class="eyebrow">Anonymized research project</p>
 
-            <h1 id="paper-title">
-              <span class="title-name">ScheduleGen</span>
-              <span class="title-rest">
-                Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning
-              </span>
-            </h1>
+          <h1 id="paper-title">
+            <span class="project-title">ScheduleGen</span>
+            <span class="paper-title">
+              Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning
+            </span>
+          </h1>
 
-            <p class="hero-summary">
-              Adapting contact-rich skills, planning collision-free transitions, and coordinating robot arms to generate scalable imitation-learning data.
-            </p>
+          <p class="hero-summary">
+            An integrated planning and scheduling approach for generating safe, coordinated demonstrations across multi-arm robot systems.
+          </p>
 
-            <div class="author-row">
-              <p class="authors">Anonymous Authors</p>
-              <span class="author-divider" aria-hidden="true"></span>
-              <p class="review-status">Manuscript under double-blind review</p>
-            </div>
+          <div class="author-block">
+            <p class="authors">Anonymous Authors</p>
+            <p class="review-note">Currently under anonymous double-blind review.</p>
           </div>
 
-          <aside class="workflow" aria-label="Core ScheduleGen workflow">
-            <p class="workflow-label">Core workflow</p>
-            <ol>
-              <li>
-                <span class="step-number">01</span>
-                <span class="step-name">Transfer skills</span>
-              </li>
-              <li>
-                <span class="step-number">02</span>
-                <span class="step-name">Plan motions</span>
-              </li>
-              <li>
-                <span class="step-number">03</span>
-                <span class="step-name">Schedule arms</span>
-              </li>
-              <li>
-                <span class="step-number">04</span>
-                <span class="step-name">Learn policies</span>
-              </li>
-            </ol>
-          </aside>
+          <div class="hero-actions" aria-label="Page shortcuts">
+            <a class="button button-primary" href="#overview">
+              View overview
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 10h12M11.5 5.5 16 10l-4.5 4.5"></path>
+              </svg>
+            </a>
+            <a class="button button-secondary" href="#abstract">Read abstract</a>
+          </div>
         </div>
       </section>
 
-      <section class="overview section-shell" id="overview" aria-labelledby="overview-title">
-        <div class="figure-card">
-          <div class="figure-heading">
+      <section class="overview page-shell" id="overview" aria-labelledby="overview-title">
+        <div class="visual-card">
+          <div class="visual-heading">
             <div>
-              <p class="section-kicker">System overview</p>
-              <h2 id="overview-title">From a few demonstrations to coordinated policies.</h2>
+              <p class="section-label">System overview</p>
+              <h2 id="overview-title">From source demonstrations to real deployment.</h2>
             </div>
 
             <a
-              class="figure-link"
+              class="text-link"
               href="assets/schedulegen-overview.png"
               target="_blank"
               rel="noopener"
+              aria-label="Open the ScheduleGen overview figure at full resolution in a new tab"
             >
-              <span>Open full resolution</span>
+              Full resolution
               <svg viewBox="0 0 20 20" aria-hidden="true">
                 <path d="M5.5 14.5 14.5 5.5M7 5.5h7.5V13"></path>
               </svg>
@@ -121,7 +107,13 @@
           </div>
 
           <figure>
-            <div class="figure-stage">
+            <a
+              class="figure-link"
+              href="assets/schedulegen-overview.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open the ScheduleGen overview figure at full resolution in a new tab"
+            >
               <img
                 src="assets/schedulegen-overview.png"
                 width="2400"
@@ -131,28 +123,77 @@
                 decoding="async"
                 aria-describedby="overview-caption"
               >
-            </div>
+            </a>
 
             <figcaption id="overview-caption">
-              <span class="caption-index">Figure 1</span>
+              <span class="caption-label">Figure 1</span>
               <span>
                 <strong>ScheduleGen overview.</strong> From a small set of source demonstrations, ScheduleGen adapts contact-rich skill demonstrations, plans collision-free connecting motions, and jointly schedules all arms to generate simulation data for multi-arm imitation learning and real deployment. The bottom row highlights long-horizon contact manipulation, challenging reset distributions, cluttered layouts, and multi-arm scenarios.
               </span>
             </figcaption>
           </figure>
         </div>
+
+        <aside class="tldr" aria-labelledby="tldr-title">
+          <p class="tldr-label" id="tldr-title">TL;DR</p>
+          <p>
+            ScheduleGen turns a small set of contact-rich demonstrations into collision-aware, coordinated multi-arm training data by combining skill adaptation, motion planning, and joint scheduling.
+          </p>
+          <div class="tldr-flow" aria-label="ScheduleGen method stages">
+            <span>Adapt</span>
+            <i aria-hidden="true"></i>
+            <span>Plan</span>
+            <i aria-hidden="true"></i>
+            <span>Schedule</span>
+            <i aria-hidden="true"></i>
+            <span>Learn</span>
+          </div>
+        </aside>
       </section>
 
-      <section class="abstract section-shell" id="abstract" aria-labelledby="abstract-title">
-        <div class="section-rail" aria-hidden="true">
-          <span>02</span>
-          <span class="rail-line"></span>
-          <span>Abstract</span>
+      <section class="highlights page-shell" id="highlights" aria-labelledby="highlights-title">
+        <div class="section-heading">
+          <p class="section-label">At a glance</p>
+          <h2 id="highlights-title">Evaluation highlights</h2>
+          <p>Selected results reported in the manuscript abstract.</p>
         </div>
 
-        <div class="abstract-body">
-          <p class="section-kicker">The paper in brief</p>
-          <h2 id="abstract-title">Abstract</h2>
+        <dl class="stat-grid">
+          <div class="stat-card">
+            <dt>Simulation task variants</dt>
+            <dd>28</dd>
+          </div>
+          <div class="stat-card">
+            <dt>Mean data-generation success</dt>
+            <dd>79.6<span>%</span></dd>
+          </div>
+          <div class="stat-card">
+            <dt>Mean policy success</dt>
+            <dd>65.5<span>%</span></dd>
+          </div>
+          <div class="stat-card">
+            <dt>Across five real-world tasks</dt>
+            <dd>65&ndash;80<span>%</span></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="abstract-section" id="abstract" aria-labelledby="abstract-title">
+        <div class="page-shell abstract-layout">
+          <div class="abstract-heading">
+            <p class="section-label">About the work</p>
+            <h2 id="abstract-title">Abstract</h2>
+            <p class="abstract-intro">
+              Safe demonstration generation for contact-rich, coordinated multi-arm manipulation.
+            </p>
+
+            <ul class="topic-list" aria-label="Research themes">
+              <li>Skill adaptation</li>
+              <li>Motion planning</li>
+              <li>Joint scheduling</li>
+              <li>Imitation learning</li>
+            </ul>
+          </div>
 
           <div class="abstract-copy">
             <p>
@@ -167,27 +208,25 @@
               We evaluate ScheduleGen on 28 simulation task variants, including seven externally authored RoboDojo tasks and settings inaccessible to prior systems; it achieves 79.6% mean data-generation success and trains policies with 65.5% mean success. These policies outperform the DexMimicGen baseline on almost all the tasks and achieve 65&ndash;80% success across five real-world tasks through zero-shot sim-to-real and real-to-sim-to-real transfer.
             </p>
           </div>
-
-          <ul class="topic-list" aria-label="Research themes">
-            <li>Skill adaptation</li>
-            <li>Motion planning</li>
-            <li>Joint scheduling</li>
-            <li>Imitation learning</li>
-          </ul>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="footer-mark" aria-hidden="true"></span>
+      <div class="page-shell footer-inner">
+        <a class="footer-brand" href="#top" aria-label="ScheduleGen home">
+          <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+            <path d="M5 9h26M5 18h26M5 27h26"></path>
+            <circle cx="13" cy="9" r="3"></circle>
+            <circle cx="24" cy="18" r="3"></circle>
+            <circle cx="17" cy="27" r="3"></circle>
+          </svg>
           <span>ScheduleGen</span>
-        </div>
+        </a>
 
         <div class="footer-copy">
           <p>Currently under anonymous double-blind review.</p>
-          <p class="footer-note">Author identities and publication details are withheld during review.</p>
+          <p>Author identities and publication details are withheld during review.</p>
         </div>
 
         <a class="back-to-top" href="#top">
