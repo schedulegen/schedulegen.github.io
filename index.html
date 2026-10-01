@@ -3,26 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="ScheduleGen is an integrated planning and scheduling approach for multi-arm demonstration generation."
-    >
+    <meta name="description" content="ScheduleGen adapts contact-rich skills, plans collision-free transitions, and jointly schedules multi-arm demonstrations for imitation learning.">
     <meta name="robots" content="noindex, nofollow, noarchive">
     <meta name="referrer" content="no-referrer">
-    <meta name="theme-color" content="#f7f7f5">
-
-    <title>ScheduleGen | Anonymized Project Page</title>
-
+    <meta name="theme-color" content="#f5f5f1">
+    <title>ScheduleGen | Multi-Arm Demonstration Generation</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="assets/schedulegen-overview.png" as="image" type="image/png">
+    <link rel="preload" href="assets/schedulegen-video-poster.jpg" as="image" type="image/jpeg">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
   </head>
 
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header" aria-label="Site header">
-      <div class="nav-shell">
+    <header class="site-header">
+      <div class="shell nav-inner">
         <a class="brand" href="#top" aria-label="ScheduleGen home">
           <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
             <path d="M5 9h26M5 18h26M5 27h26"></path>
@@ -32,209 +28,554 @@
           </svg>
           <span>ScheduleGen</span>
         </a>
-
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#overview">Overview</a>
-          <a href="#highlights">Highlights</a>
+          <a href="#method">Method</a>
+          <a href="#tasks">Tasks</a>
+          <a href="#results">Results</a>
+          <a href="#benchmarks">RoboDojo</a>
+          <a href="#transfer">Real world</a>
           <a href="#abstract">Abstract</a>
         </nav>
-
-        <p class="review-chip">
-          <span aria-hidden="true"></span>
-          <span class="review-chip-long">Anonymous double-blind review</span>
-          <span class="review-chip-short">Anonymous review</span>
-        </p>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="hero" id="top" aria-labelledby="paper-title">
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-glow glow-one" aria-hidden="true"></div>
-        <div class="hero-glow glow-two" aria-hidden="true"></div>
-
-        <div class="page-shell hero-content">
-          <p class="eyebrow">Anonymized research project</p>
-
-          <h1 id="paper-title">
-            <span class="project-title">ScheduleGen</span>
-            <span class="paper-title">
-              Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning
-            </span>
-          </h1>
-
-          <p class="hero-summary">
-            An integrated planning and scheduling approach for generating safe, coordinated demonstrations across multi-arm robot systems.
-          </p>
-
-          <div class="author-block">
-            <p class="authors">Anonymous Authors</p>
-            <p class="review-note">Currently under anonymous double-blind review.</p>
-          </div>
-
-          <div class="hero-actions" aria-label="Page shortcuts">
-            <a class="button button-primary" href="#overview">
-              View overview
-              <svg viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M4 10h12M11.5 5.5 16 10l-4.5 4.5"></path>
-              </svg>
-            </a>
-            <a class="button button-secondary" href="#abstract">Read abstract</a>
-          </div>
-        </div>
+      <section class="paper-header shell" id="top" aria-labelledby="paper-title">
+        <h1 id="paper-title">
+          <span>ScheduleGen:</span> Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning
+        </h1>
+        <p class="authors">Anonymous Authors</p>
+        <p class="paper-summary">From a handful of source demonstrations to collision-aware, coordinated policy-training data.</p>
       </section>
 
-      <section class="overview page-shell" id="overview" aria-labelledby="overview-title">
-        <div class="visual-card">
-          <div class="visual-heading">
-            <div>
-              <p class="section-label">System overview</p>
-              <h2 id="overview-title">From source demonstrations to real deployment.</h2>
-            </div>
-
-            <a
-              class="text-link"
-              href="assets/schedulegen-overview.png"
-              target="_blank"
-              rel="noopener"
-              aria-label="Open the ScheduleGen overview figure at full resolution in a new tab"
-            >
-              Full resolution
-              <svg viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M5.5 14.5 14.5 5.5M7 5.5h7.5V13"></path>
-              </svg>
-            </a>
+      <section class="hero-media shell" id="video" aria-labelledby="video-title">
+        <div class="media-heading">
+          <div>
+            <h2 id="video-title">ScheduleGen in three minutes</h2>
           </div>
-
-          <figure>
-            <a
-              class="figure-link"
-              href="assets/schedulegen-overview.png"
-              target="_blank"
-              rel="noopener"
-              aria-label="Open the ScheduleGen overview figure at full resolution in a new tab"
-            >
-              <img
-                src="assets/schedulegen-overview.png"
-                width="2400"
-                height="995"
-                alt="Pipeline overview. Five real robot demonstrations enter ScheduleGen, which performs skill transfer, motion planning, and joint scheduling. It generates randomized simulation trajectories for imitation learning and a policy that is deployed on a real two-arm robot. Four example panels show long-horizon contact manipulation, challenging reset distributions, cluttered layouts, and a four-arm scenario."
-                fetchpriority="high"
-                decoding="async"
-                aria-describedby="overview-caption"
-              >
-            </a>
-
-            <figcaption id="overview-caption">
-              <span class="caption-label">Figure 1</span>
-              <span>
-                <strong>ScheduleGen overview.</strong> From a small set of source demonstrations, ScheduleGen adapts contact-rich skill demonstrations, plans collision-free connecting motions, and jointly schedules all arms to generate simulation data for multi-arm imitation learning and real deployment. The bottom row highlights long-horizon contact manipulation, challenging reset distributions, cluttered layouts, and multi-arm scenarios.
-              </span>
-            </figcaption>
-          </figure>
         </div>
 
-        <aside class="tldr" aria-labelledby="tldr-title">
-          <p class="tldr-label" id="tldr-title">TL;DR</p>
-          <p>
-            ScheduleGen turns a small set of contact-rich demonstrations into collision-aware, coordinated multi-arm training data by combining skill adaptation, motion planning, and joint scheduling.
-          </p>
-          <div class="tldr-flow" aria-label="ScheduleGen method stages">
-            <span>Adapt</span>
-            <i aria-hidden="true"></i>
-            <span>Plan</span>
-            <i aria-hidden="true"></i>
-            <span>Schedule</span>
-            <i aria-hidden="true"></i>
-            <span>Learn</span>
-          </div>
-        </aside>
-      </section>
-
-      <section class="highlights page-shell" id="highlights" aria-labelledby="highlights-title">
-        <div class="section-heading">
-          <p class="section-label">At a glance</p>
-          <h2 id="highlights-title">Evaluation highlights</h2>
-          <p>Selected results reported in the manuscript abstract.</p>
+        <div class="main-player" id="main-player">
+          <video
+            id="research-video"
+            controls
+            playsinline
+            preload="metadata"
+            poster="assets/schedulegen-video-poster.jpg"
+            controlslist="nodownload noremoteplayback"
+            disablepictureinpicture
+            aria-label="ScheduleGen overview video"
+          >
+            <source src="assets/schedulegen-paper-video.mp4" type="video/mp4">
+            Your browser does not support embedded MP4 video.
+          </video>
         </div>
 
-        <dl class="stat-grid">
-          <div class="stat-card">
-            <dt>Simulation task variants</dt>
-            <dd>28</dd>
-          </div>
-          <div class="stat-card">
-            <dt>Mean data-generation success</dt>
-            <dd>79.6<span>%</span></dd>
-          </div>
-          <div class="stat-card">
-            <dt>Mean policy success</dt>
-            <dd>65.5<span>%</span></dd>
-          </div>
-          <div class="stat-card">
-            <dt>Across five real-world tasks</dt>
-            <dd>65&ndash;80<span>%</span></dd>
-          </div>
+        <div class="chapters" aria-label="Video chapters">
+          <button class="chapter is-active" type="button" data-time="0"><span>00:00</span>Overview</button>
+          <button class="chapter" type="button" data-time="20"><span>00:20</span>Method</button>
+          <button class="chapter" type="button" data-time="30"><span>00:30</span>Transfer</button>
+          <button class="chapter" type="button" data-time="70"><span>01:10</span>Four arms</button>
+          <button class="chapter" type="button" data-time="115"><span>01:55</span>Benchmarks</button>
+          <button class="chapter" type="button" data-time="150"><span>02:30</span>Scale</button>
+        </div>
+
+        <dl class="headline-stats" aria-label="Headline results" data-reveal>
+          <div><dt>Simulation variants</dt><dd>28</dd></div>
+          <div><dt>Mean generation success</dt><dd>79.6<span>%</span></dd></div>
+          <div><dt>Mean policy success</dt><dd>65.5<span>%</span></dd></div>
+          <div><dt>Real-world success</dt><dd>65&ndash;80<span>%</span></dd></div>
         </dl>
       </section>
 
-      <section class="abstract-section" id="abstract" aria-labelledby="abstract-title">
-        <div class="page-shell abstract-layout">
-          <div class="abstract-heading">
-            <p class="section-label">About the work</p>
-            <h2 id="abstract-title">Abstract</h2>
-            <p class="abstract-intro">
-              Safe demonstration generation for contact-rich, coordinated multi-arm manipulation.
-            </p>
-
-            <ul class="topic-list" aria-label="Research themes">
-              <li>Skill adaptation</li>
-              <li>Motion planning</li>
-              <li>Joint scheduling</li>
-              <li>Imitation learning</li>
-            </ul>
+      <section class="section contribution-section" id="contributions" aria-labelledby="contribution-title">
+        <div class="shell">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="section-label">At a glance</p>
+              <h2 id="contribution-title">One pipeline, multiple embodiments</h2>
+            </div>
+            <p>Object-relative skills, collision-aware motion, and multi-arm timing are solved together.</p>
           </div>
 
+          <ol class="contribution-list">
+            <li data-reveal>
+              <svg class="contribution-icon" viewBox="0 0 256 256" aria-hidden="true">
+                <path d="M43 190C78 190 69 151 98 151s20-41 51-41 21-44 57-44" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+                <g stroke="currentColor" stroke-width="12">
+                  <circle cx="43" cy="190" r="18" fill="#f7d7cd"></circle>
+                  <circle cx="98" cy="151" r="18" fill="white"></circle>
+                  <circle cx="149" cy="110" r="19" fill="#f7d7cd"></circle>
+                  <circle cx="206" cy="66" r="22" fill="#d96b4b"></circle>
+                </g>
+              </svg>
+              <div>
+                <span>01</span>
+                <h3>Integrated generation</h3>
+                <p>Adapts contact skills, plans the connecting motions, and schedules every arm in one generator.</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <svg class="contribution-icon" viewBox="0 0 256 256" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M58 62C82 72 90 91 107 108"></path><path d="M198 62C174 72 166 91 149 108"></path>
+                  <path d="M58 194C82 184 90 165 107 148"></path><path d="M198 194C174 184 166 165 149 148"></path>
+                </g>
+                <g stroke="currentColor" stroke-width="11">
+                  <circle cx="46" cy="56" r="17" fill="white"></circle><circle cx="210" cy="56" r="17" fill="#b994c4"></circle>
+                  <circle cx="46" cy="200" r="17" fill="#b994c4"></circle><circle cx="210" cy="200" r="17" fill="white"></circle>
+                  <rect x="106" y="106" width="44" height="44" rx="8" fill="#e3d4e7"></rect>
+                </g>
+              </svg>
+              <div>
+                <span>02</span>
+                <h3>Beyond bimanual</h3>
+                <p>Covers shared workspaces, clutter, long-horizon contact, four-arm systems, and a fixed-waist humanoid.</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <svg class="contribution-icon" viewBox="0 0 256 256" aria-hidden="true">
+                <circle cx="128" cy="128" r="91" fill="#fcf4de" stroke="currentColor" stroke-width="12"></circle>
+                <g stroke="currentColor" stroke-width="11">
+                  <circle cx="84" cy="83" r="17" fill="white"></circle><circle cx="158" cy="72" r="18" fill="#e8bb59"></circle>
+                  <circle cx="188" cy="124" r="17" fill="white"></circle><circle cx="75" cy="154" r="18" fill="#f4d792"></circle>
+                  <circle cx="129" cy="132" r="18" fill="white"></circle><circle cx="159" cy="184" r="19" fill="#d6a039"></circle>
+                </g>
+              </svg>
+              <div>
+                <span>03</span>
+                <h3>Simulation to deployment</h3>
+                <p>Evaluated on 28 simulation variants and five real-world tasks with zero-shot transfer.</p>
+              </div>
+            </li>
+          </ol>
+
+        </div>
+      </section>
+
+      <section class="section method-section" id="method" aria-labelledby="method-title">
+        <div class="shell">
+          <div class="section-heading inverse-heading">
+            <div>
+              <p class="section-label">Method</p>
+              <h2 id="method-title">Plan paths. Schedule time.</h2>
+            </div>
+            <p>Per-arm paths preserve contact-rich behavior; a joint schedule resolves task, collision, and synchronization constraints.</p>
+          </div>
+
+          <div class="method-media" data-reveal>
+            <video
+              id="clip-method"
+              class="ambient-video"
+              data-autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/schedulegen-method-poster.jpg"
+              aria-label="Animated ScheduleGen methodology diagram"
+            >
+              <source src="assets/schedulegen-method.mp4" type="video/mp4">
+            </video>
+            <button class="clip-toggle" type="button" data-video="clip-method" aria-label="Pause animated method diagram"><span aria-hidden="true">Ⅱ</span></button>
+          </div>
+
+          <ol class="method-steps">
+            <li data-reveal><span>01</span><div><h3>Adapt skills</h3><p>Transfer object-relative contact segments to sampled scenes.</p></div></li>
+            <li data-reveal><span>02</span><div><h3>Plan motion</h3><p>Connect skills with feasible per-arm joint-space paths.</p></div></li>
+            <li data-reveal><span>03</span><div><h3>Schedule arms</h3><p>Solve a MILP over collision, ordering, and synchronization constraints.</p></div></li>
+            <li data-reveal><span>04</span><div><h3>Validate data</h3><p>Replay schedules in parallel simulation and retain successful trajectories.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section task-section" id="tasks" aria-labelledby="tasks-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Policy rollouts</p>
+              <h2 id="tasks-title">Generated data trains successful policies</h2>
+            </div>
+            <p>Rollouts span bimanual, four-arm, and humanoid systems under Normal and challenging Cross layouts.</p>
+          </div>
+
+          <div class="policy-video-grid" aria-label="Representative learned-policy rollouts">
+            <article class="policy-video-card" data-reveal>
+              <div class="policy-video-frame ratio-four-three">
+                <video id="task-video-bowl" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-bowl-cross-poster.jpg" aria-label="Cross-Arm Bowl Stacking learned-policy rollout">
+                  <source src="assets/task-bowl-cross.mp4" type="video/mp4">
+                </video>
+                <span class="video-context">Cross-Arm</span>
+                <button class="clip-toggle" type="button" data-video="task-video-bowl" aria-label="Pause Cross-Arm Bowl Stacking video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div class="policy-video-copy">
+                <div><p>Two arms · shared workspace</p><h3>Bowl stacking</h3></div>
+                <dl><div><dt>Generation</dt><dd>66.7%</dd></div><div><dt>Policy</dt><dd>80%</dd></div></dl>
+              </div>
+            </article>
+
+            <article class="policy-video-card" data-reveal>
+              <div class="policy-video-frame ratio-four-three">
+                <video id="task-video-dishware" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-dishware-cross-poster.jpg" aria-label="Cross-Arm Dishware Stacking learned-policy rollout">
+                  <source src="assets/task-dishware-cross.mp4" type="video/mp4">
+                </video>
+                <span class="video-context">Cross-Arm</span>
+                <button class="clip-toggle" type="button" data-video="task-video-dishware" aria-label="Pause Cross-Arm Dishware Stacking video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div class="policy-video-copy">
+                <div><p>Two arms · long horizon</p><h3>Dishware stacking</h3></div>
+                <dl><div><dt>Generation</dt><dd>68%</dd></div><div><dt>Policy</dt><dd>76%</dd></div></dl>
+              </div>
+            </article>
+
+            <article class="policy-video-card" data-reveal>
+              <div class="policy-video-frame ratio-wide">
+                <video id="task-video-four" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/action-four-arm-poster.jpg" aria-label="Four-arm cube stacking learned-policy rollout">
+                  <source src="assets/action-four-arm.mp4" type="video/mp4">
+                </video>
+                <span class="video-context">Four arms</span>
+                <button class="clip-toggle" type="button" data-video="task-video-four" aria-label="Pause four-arm cube stacking video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div class="policy-video-copy">
+                <div><p>Table and bin workspaces</p><h3>Cube stacking</h3></div>
+                <dl><div><dt>Variants</dt><dd>8</dd></div><div><dt>Policy range</dt><dd>30–90%</dd></div></dl>
+              </div>
+            </article>
+
+            <article class="policy-video-card" data-reveal>
+              <div class="policy-video-frame ratio-wide">
+                <video id="task-video-humanoid" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/action-humanoid-poster.jpg" aria-label="Humanoid Nut Pouring learned-policy rollout">
+                  <source src="assets/action-humanoid.mp4" type="video/mp4">
+                </video>
+                <span class="video-context">Humanoid</span>
+                <button class="clip-toggle" type="button" data-video="task-video-humanoid" aria-label="Pause humanoid Nut Pouring video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div class="policy-video-copy">
+                <div><p>Fixed waist · two layouts</p><h3>Nut pouring</h3></div>
+                <dl><div><dt>Layouts</dt><dd>2</dd></div><div><dt>Policy range</dt><dd>48–96%</dd></div></dl>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section comparison-section" id="results" aria-labelledby="results-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Shared-source evaluation</p>
+              <h2 id="results-title">Hard layouts, without new source data</h2>
+            </div>
+            <p>ScheduleGen and the baselines use the same demonstrations within each task family.</p>
+          </div>
+
+          <div class="chart-toolbar">
+            <div class="metric-switch" role="group" aria-label="Comparison metric">
+              <button type="button" class="is-active" data-chart-metric="policy" aria-pressed="true">Learned-policy success</button>
+              <button type="button" data-chart-metric="datagen" aria-pressed="false">Data-generation success</button>
+            </div>
+            <div class="chart-legend" aria-label="Methods">
+              <span><i class="legend-sg"></i>ScheduleGen</span>
+              <span><i class="legend-tuned"></i>DexMimicGen-Tuned</span>
+              <span><i class="legend-base"></i>DexMimicGen</span>
+            </div>
+          </div>
+
+          <div class="comparison-chart" id="comparison-chart" data-animate-bars>
+            <div class="chart-y-label">Success (%)</div>
+            <div class="chart-plot">
+              <div class="chart-ticks" aria-hidden="true"><span>100</span><span>75</span><span>50</span><span>25</span><span>0</span></div>
+              <div class="chart-groups">
+                <div class="chart-group" aria-label="Bowl Cross-Arm">
+                  <div class="group-bars">
+                    <div class="comparison-bar bar-sg"><span>80%</span><i data-policy="80" data-datagen="66.7"></i></div>
+                    <div class="comparison-bar bar-tuned"><span>42%</span><i data-policy="42" data-datagen="40"></i></div>
+                    <div class="comparison-bar bar-base"><span>0%</span><i data-policy="0" data-datagen="0"></i></div>
+                  </div>
+                  <p>Bowl<br><small>Cross-Arm</small></p>
+                </div>
+                <div class="chart-group" aria-label="Dishware Cross-Arm">
+                  <div class="group-bars">
+                    <div class="comparison-bar bar-sg"><span>76%</span><i data-policy="76" data-datagen="68"></i></div>
+                    <div class="comparison-bar bar-tuned"><span>58%</span><i data-policy="58" data-datagen="41.2"></i></div>
+                    <div class="comparison-bar bar-base"><span>0%</span><i data-policy="0" data-datagen="0"></i></div>
+                  </div>
+                  <p>Dishware<br><small>Cross-Arm</small></p>
+                </div>
+                <div class="chart-group" aria-label="Two-arm cube Cross-Arm">
+                  <div class="group-bars">
+                    <div class="comparison-bar bar-sg"><span>86%</span><i data-policy="86" data-datagen="88"></i></div>
+                    <div class="comparison-bar bar-tuned"><span>74%</span><i data-policy="74" data-datagen="63.5"></i></div>
+                    <div class="comparison-bar bar-base"><span>0%</span><i data-policy="0" data-datagen="0"></i></div>
+                  </div>
+                  <p>Two-arm cube<br><small>Cross-Arm</small></p>
+                </div>
+                <div class="chart-group" aria-label="Two-arm cube Cross-Bin">
+                  <div class="group-bars">
+                    <div class="comparison-bar bar-sg"><span>70%</span><i data-policy="70" data-datagen="64"></i></div>
+                    <div class="comparison-bar bar-tuned"><span>0%</span><i data-policy="0" data-datagen="0"></i></div>
+                    <div class="comparison-bar bar-base"><span>0%</span><i data-policy="0" data-datagen="0"></i></div>
+                  </div>
+                  <p>Two-arm cube<br><small>Cross-Bin</small></p>
+                </div>
+                <div class="chart-group" aria-label="Humanoid Cross layout">
+                  <div class="group-bars">
+                    <div class="comparison-bar bar-sg"><span>48%</span><i data-policy="48" data-datagen="61.1"></i></div>
+                    <div class="comparison-bar bar-tuned"><span>20%</span><i data-policy="20" data-datagen="10.6"></i></div>
+                    <div class="comparison-bar bar-base"><span>18%</span><i data-policy="18" data-datagen="7.8"></i></div>
+                  </div>
+                  <p>Humanoid<br><small>Cross</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="protocol-note">Policies are evaluated over 50 episodes. Data-generation success is measured while collecting 1,000 accepted demonstrations per variant.</p>
+        </div>
+      </section>
+
+      <section class="section benchmark-section" id="benchmarks" aria-labelledby="benchmark-title">
+        <div class="shell">
+          <div class="section-heading benchmark-heading">
+            <div>
+              <p class="section-label">RoboDojo transfer</p>
+              <h2 id="benchmark-title">Five demonstrations become 500 per task</h2>
+            </div>
+            <div class="rail-controls" aria-label="RoboDojo task carousel controls">
+              <button type="button" data-rail-direction="-1" aria-label="Show previous tasks">←</button>
+              <button type="button" data-rail-direction="1" aria-label="Show next tasks">→</button>
+            </div>
+          </div>
+
+          <div class="benchmark-flow" aria-label="RoboDojo demonstration expansion pipeline" data-reveal>
+            <div><span>Input</span><strong>5 released demonstrations</strong><small>for each task</small></div>
+            <i aria-hidden="true">→</i>
+            <div><span>Reconstruct</span><strong>Replayable simulation seed</strong><small>validated by task success</small></div>
+            <i aria-hidden="true">→</i>
+            <div><span>Generate</span><strong>ScheduleGen</strong><small>collision-aware coordination</small></div>
+            <i aria-hidden="true">→</i>
+            <div class="flow-output"><span>Output</span><strong>500 demonstrations</strong><small>for each of 7 tasks</small></div>
+          </div>
+
+          <div class="benchmark-rail" id="benchmark-rail" tabindex="0" aria-label="Seven RoboDojo task videos">
+            <article class="benchmark-card">
+              <div class="benchmark-video-wrap">
+                <video id="task-swap-t" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-swap-t-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Swap T">
+                  <source src="assets/task-swap-t.mp4" type="video/mp4">
+                </video>
+                <button class="clip-toggle" type="button" data-video="task-swap-t" aria-label="Pause Swap T video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div><h3>Swap T</h3><p><b>78.0%</b> generation · <b>25%</b> policy</p></div>
+            </article>
+            <article class="benchmark-card">
+              <div class="benchmark-video-wrap">
+                <video id="task-build-tower" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-build-tower-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Build Tower">
+                  <source src="assets/task-build-tower.mp4" type="video/mp4">
+                </video>
+                <button class="clip-toggle" type="button" data-video="task-build-tower" aria-label="Pause Build Tower video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div><h3>Build Tower</h3><p><b>91.7%</b> generation · <b>45%</b> policy</p></div>
+            </article>
+            <article class="benchmark-card">
+              <div class="benchmark-video-wrap">
+                <video id="task-insert-tubes" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-insert-tubes-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Insert Tubes">
+                  <source src="assets/task-insert-tubes.mp4" type="video/mp4">
+                </video>
+                <button class="clip-toggle" type="button" data-video="task-insert-tubes" aria-label="Pause Insert Tubes video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div><h3>Insert Tubes</h3><p><b>94.2%</b> generation · <b>45%</b> policy</p></div>
+            </article>
+            <article class="benchmark-card">
+              <div class="benchmark-video-wrap">
+                <video id="task-arrange-number" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-arrange-number-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Arrange Largest Number">
+                  <source src="assets/task-arrange-number.mp4" type="video/mp4">
+                </video>
+                <button class="clip-toggle" type="button" data-video="task-arrange-number" aria-label="Pause Arrange Largest Number video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div><h3>Arrange Largest Number</h3><p><b>96.5%</b> generation · <b>50%</b> policy</p></div>
+            </article>
+            <article class="benchmark-card">
+              <div class="benchmark-video-wrap">
+                <video id="task-press-number" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-press-number-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Press by Number">
+                  <source src="assets/task-press-number.mp4" type="video/mp4">
+                </video>
+                <button class="clip-toggle" type="button" data-video="task-press-number" aria-label="Pause Press by Number video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div><h3>Press by Number</h3><p><b>100%</b> generation · <b>40%</b> policy</p></div>
+            </article>
+            <article class="benchmark-card">
+              <div class="benchmark-video-wrap">
+                <video id="task-sort-dolls" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-sort-dolls-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Sort Nesting Dolls">
+                  <source src="assets/task-sort-dolls.mp4" type="video/mp4">
+                </video>
+                <button class="clip-toggle" type="button" data-video="task-sort-dolls" aria-label="Pause Sort Nesting Dolls video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div><h3>Sort Nesting Dolls</h3><p><b>88.0%</b> generation · <b>65%</b> policy</p></div>
+            </article>
+            <article class="benchmark-card">
+              <div class="benchmark-video-wrap">
+                <video id="task-classify" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-classify-objects-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Classify Objects">
+                  <source src="assets/task-classify-objects.mp4" type="video/mp4">
+                </video>
+                <button class="clip-toggle" type="button" data-video="task-classify" aria-label="Pause Classify Objects video"><span aria-hidden="true">Ⅱ</span></button>
+              </div>
+              <div><h3>Classify Objects</h3><p><b>75.5%</b> generation · <b>65%</b> policy</p></div>
+            </article>
+          </div>
+
+          <div class="benchmark-summary" data-animate-horizontal>
+            <div class="benchmark-summary-copy">
+              <p class="section-label">Scheduling effect</p>
+              <h3>More parallel motion, shorter trajectories</h3>
+              <p>Across 3,500 generated trajectories, scheduling increases simultaneous arm motion and reduces execution length relative to the released demonstrations.</p>
+            </div>
+            <div class="paired-metrics">
+              <div class="paired-chart">
+                <p>Concurrent arm motion</p>
+                <div><span>Released</span><i><em style="--bar:15.5%"></em></i><b>15.5%</b></div>
+                <div class="ours"><span>ScheduleGen</span><i><em style="--bar:31.5%"></em></i><b>31.5%</b></div>
+              </div>
+              <div class="shorter-stat"><strong>7.5<span>%</span></strong><p>shorter trajectories<br>on average</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section transfer-section" id="transfer" aria-labelledby="transfer-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Real-world transfer</p>
+              <h2 id="transfer-title">Two routes to the real robot</h2>
+            </div>
+            <p>Every policy is evaluated over 20 hardware episodes and trained in simulation without real-world fine-tuning. <span class="speed-note">1x speed</span></p>
+          </div>
+
+          <div class="transfer-route">
+            <div class="transfer-route-heading">
+              <div><span>01</span><div><p>Zero-shot</p><h3>Sim2Real</h3></div></div>
+              <p><strong>77.5%</strong> mean success across four simulation-only policies.</p>
+            </div>
+
+            <div class="real-video-grid" aria-label="Zero-shot Sim2Real rollouts">
+              <article class="real-video-card" data-reveal>
+                <div class="real-video-frame">
+                  <video id="real-bowl-normal" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/real-bowl-normal-poster.jpg" aria-label="Real-world Normal Bowl Stacking policy rollout">
+                    <source src="assets/real-bowl-normal.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="real-bowl-normal" aria-label="Pause Normal Bowl Stacking video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <div><p>Bowl stacking</p><span>Normal layout</span><strong>75%</strong></div>
+              </article>
+
+              <article class="real-video-card" data-reveal>
+                <div class="real-video-frame">
+                  <video id="real-bowl-cross" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/real-bowl-cross-poster.jpg" aria-label="Real-world Cross-Arm Bowl Stacking policy rollout">
+                    <source src="assets/real-bowl-cross.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="real-bowl-cross" aria-label="Pause Cross-Arm Bowl Stacking hardware video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <div><p>Bowl stacking</p><span>Cross-Arm layout</span><strong>80%</strong></div>
+              </article>
+
+              <article class="real-video-card" data-reveal>
+                <div class="real-video-frame">
+                  <video id="real-dishware-normal" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/real-dishware-normal-poster.jpg" aria-label="Real-world Normal Dishware Stacking policy rollout">
+                    <source src="assets/real-dishware-normal.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="real-dishware-normal" aria-label="Pause Normal Dishware Stacking video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <div><p>Dishware stacking</p><span>Normal layout</span><strong>80%</strong></div>
+              </article>
+
+              <article class="real-video-card" data-reveal>
+                <div class="real-video-frame">
+                  <video id="real-dishware-cross" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/real-dishware-cross-poster.jpg" aria-label="Real-world Cross-Arm Dishware Stacking policy rollout">
+                    <source src="assets/real-dishware-cross.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="real-dishware-cross" aria-label="Pause Cross-Arm Dishware Stacking hardware video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <div><p>Dishware stacking</p><span>Cross-Arm layout</span><strong>75%</strong></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="transfer-route transfer-route-secondary">
+            <div class="transfer-route-heading">
+              <div><span>02</span><div><p>Demonstration-seeded</p><h3>Real2Sim2Real</h3></div></div>
+              <p>Real demonstrations seed randomized simulation datasets; the learned policies return to the same robot.</p>
+            </div>
+
+            <div class="real-video-grid r2s2r-video-grid" aria-label="Real2Sim2Real policy rollouts">
+              <article class="real-video-card" data-reveal>
+                <div class="real-video-frame">
+                  <video id="real-cube-stack" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/real-cube-stack-poster.jpg" aria-label="Real2Sim2Real Cube Stacking policy rollout">
+                    <source src="assets/real-cube-stack.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="real-cube-stack" aria-label="Pause Real2Sim2Real Cube Stacking video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <div><p>Cube stacking</p><span>Five real seeds · 20 episodes</span><strong>65%</strong></div>
+              </article>
+
+              <article class="real-video-card" data-reveal>
+                <div class="real-video-frame">
+                  <video id="real-trash-normal" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/real-trash-normal-poster.jpg" aria-label="Real2Sim2Real Throwaway Trash Normal-layout policy rollout">
+                    <source src="assets/real-trash-normal.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="real-trash-normal" aria-label="Pause Throwaway Trash Normal-layout video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <div><p>Throwaway trash</p><span>Cup and bin on nominal sides</span><strong class="variant-badge">Normal</strong></div>
+              </article>
+
+              <article class="real-video-card" data-reveal>
+                <div class="real-video-frame">
+                  <video id="real-trash-cup-cross" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/real-trash-cup-cross-poster.jpg" aria-label="Real2Sim2Real Throwaway Trash Cup-Cross policy rollout">
+                    <source src="assets/real-trash-cup-cross.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="real-trash-cup-cross" aria-label="Pause Throwaway Trash Cup-Cross video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <div><p>Throwaway trash</p><span>Cup assignment crosses centerline</span><strong class="variant-badge">Cup Cross</strong></div>
+              </article>
+
+              <article class="real-video-card" data-reveal>
+                <div class="real-video-frame">
+                  <video id="real-trash-both-cross" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/real-trash-both-cross-poster.jpg" aria-label="Real2Sim2Real Throwaway Trash Both-Cross policy rollout">
+                    <source src="assets/real-trash-both-cross.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="real-trash-both-cross" aria-label="Pause Throwaway Trash Both-Cross video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <div><p>Throwaway trash</p><span>Cup and bin assignments cross</span><strong class="variant-badge">Both Cross</strong></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section abstract-section" id="abstract" aria-labelledby="abstract-title">
+        <div class="shell abstract-grid">
+          <div>
+            <p class="section-label">Paper</p>
+            <h2 id="abstract-title">Abstract</h2>
+          </div>
           <div class="abstract-copy">
-            <p>
-              Multi-arm robot platforms, including bimanual and humanoid robots, have the capability to complete tasks with lower cycle times than single-arm systems, but they are more difficult to safely control due to the presence of multi-arm constraints. Imitation learning from demonstrations is effective for controlling bimanual systems; however, it requires large datasets of demonstrations, which are expensive to collect via teleoperation.
-            </p>
-
-            <p>
-              Automated demonstration generation can alleviate this burden by synthesizing new demonstrations from a handful of source demonstrations, but existing algorithms ignore multi-arm constraints and as a result often induce unsafe and unsuccessful behaviors. We address this limitation by introducing ScheduleGen, an integrated planning &amp; scheduling algorithm for multi-arm demonstration generation. ScheduleGen first plans single-robot behavior that adapts object-centric skill demonstrations and then safely coordinates the robots by framing scheduling as a Mixed Integer Linear Programming (MILP) with constraints evaluated using GPU-accelerated collision checking.
-            </p>
-
-            <p>
-              We evaluate ScheduleGen on 28 simulation task variants, including seven externally authored RoboDojo tasks and settings inaccessible to prior systems; it achieves 79.6% mean data-generation success and trains policies with 65.5% mean success. These policies outperform the DexMimicGen baseline on almost all the tasks and achieve 65&ndash;80% success across five real-world tasks through zero-shot sim-to-real and real-to-sim-to-real transfer.
-            </p>
+            <p>Multi-arm robot platforms, including bimanual and humanoid robots, have the capability to complete tasks with lower cycle times than single-arm systems, but they are more difficult to safely control due to the presence of multi-arm constraints. Imitation learning from demonstrations is effective for controlling bimanual systems; however, it requires large datasets of demonstrations, which are expensive to collect via teleoperation.</p>
+            <p>Automated demonstration generation can alleviate this burden by synthesizing new demonstrations from a handful of source demonstrations, but existing algorithms ignore multi-arm constraints and as a result often induce unsafe and unsuccessful behaviors. We address this limitation by introducing ScheduleGen, an integrated planning &amp; scheduling algorithm for multi-arm demonstration generation. ScheduleGen first plans single-robot behavior that adapts object-centric skill demonstrations and then safely coordinates the robots by framing scheduling as a Mixed Integer Linear Programming (MILP) with constraints evaluated using GPU-accelerated collision checking.</p>
+            <p>We evaluate ScheduleGen on 28 simulation task variants, including seven externally authored RoboDojo tasks and settings inaccessible to prior systems; it achieves 79.6% mean data-generation success and trains policies with 65.5% mean success. These policies outperform the DexMimicGen baseline on almost all the tasks and achieve 65&ndash;80% success across five real-world tasks through zero-shot sim-to-real and real-to-sim-to-real transfer.</p>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="page-shell footer-inner">
-        <a class="footer-brand" href="#top" aria-label="ScheduleGen home">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="#top" aria-label="ScheduleGen home">
           <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
             <path d="M5 9h26M5 18h26M5 27h26"></path>
-            <circle cx="13" cy="9" r="3"></circle>
-            <circle cx="24" cy="18" r="3"></circle>
-            <circle cx="17" cy="27" r="3"></circle>
+            <circle cx="13" cy="9" r="3"></circle><circle cx="24" cy="18" r="3"></circle><circle cx="17" cy="27" r="3"></circle>
           </svg>
           <span>ScheduleGen</span>
         </a>
-
-        <div class="footer-copy">
-          <p>Currently under anonymous double-blind review.</p>
-          <p>Author identities and publication details are withheld during review.</p>
-        </div>
-
-        <a class="back-to-top" href="#top">
-          Back to top
-          <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M10 15V5M5.5 9.5 10 5l4.5 4.5"></path>
-          </svg>
-        </a>
+        <p>Currently under anonymous double-blind review.</p>
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
   </body>
