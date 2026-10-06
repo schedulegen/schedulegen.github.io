@@ -510,7 +510,7 @@ ol {
 
 .policy-video-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -607,6 +607,235 @@ ol {
   font-size: 20px;
   font-weight: 780;
   letter-spacing: -0.035em;
+}
+
+.four-arm-section {
+  color: white;
+  background: #132129;
+}
+
+.four-arm-section .section-heading > p {
+  color: #acb9be;
+}
+
+.four-arm-group + .four-arm-group {
+  margin-top: 42px;
+  padding-top: 37px;
+  border-top: 1px solid rgb(255 255 255 / 14%);
+}
+
+.gallery-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 14px;
+}
+
+.gallery-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.gallery-heading > div > span {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  color: #0e2427;
+  background: #73c7b7;
+  border-radius: 50%;
+  font-size: 8px;
+  font-weight: 850;
+}
+
+.gallery-heading h3 {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.gallery-heading > p {
+  color: #93a3a9;
+  font-size: 10px;
+}
+
+.four-arm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.four-arm-card {
+  overflow: hidden;
+  background: #0d181e;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 11px;
+}
+
+.four-arm-frame {
+  position: relative;
+  overflow: hidden;
+  background: #080d10;
+}
+
+.cross-view-grid .four-arm-frame {
+  aspect-ratio: 8 / 3;
+}
+
+.normal-view-grid .four-arm-frame {
+  aspect-ratio: 16 / 9;
+}
+
+.four-arm-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.four-arm-card h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 13px 12px;
+  color: #eff5f5;
+  font-size: 12px;
+  letter-spacing: -0.01em;
+}
+
+.four-arm-card h4 span {
+  color: #829298;
+  font-size: 9px;
+  font-weight: 620;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.comparison-video-section {
+  background: white;
+}
+
+.method-comparison {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.comparison-player-wrap {
+  overflow: hidden;
+  min-width: 0;
+  background: #0e1519;
+  border: 1px solid #cfd5d5;
+  border-radius: var(--radius);
+  box-shadow: 0 16px 42px rgb(23 36 44 / 8%);
+}
+
+.comparison-player-wrap video {
+  width: 100%;
+  aspect-ratio: 1280 / 552;
+  object-fit: contain;
+  background: #080c0f;
+  opacity: 1;
+  transition: opacity 150ms ease;
+}
+
+.comparison-player-wrap video.is-switching {
+  opacity: 0.32;
+}
+
+.comparison-player-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 15px 13px;
+  color: white;
+  border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+.comparison-player-caption p {
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.comparison-player-caption span {
+  color: #9fafb5;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.comparison-selector {
+  display: grid;
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.comparison-selector button {
+  position: relative;
+  display: flex;
+  min-height: 51px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 9px 13px 9px 16px;
+  overflow: hidden;
+  color: #3f4c52;
+  background: #f4f5f2;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  cursor: pointer;
+  text-align: left;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.comparison-selector button::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 3px;
+  background: transparent;
+  border-radius: 0 3px 3px 0;
+  content: "";
+}
+
+.comparison-selector button:hover {
+  color: var(--blue);
+  background: #edf2f3;
+  border-color: #c6d5da;
+}
+
+.comparison-selector button.is-active {
+  color: white;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.comparison-selector button.is-active::before {
+  background: #7fd4c3;
+}
+
+.comparison-selector span {
+  font-size: 11px;
+  font-weight: 760;
+  line-height: 1.2;
+}
+
+.comparison-selector small {
+  margin-top: 3px;
+  color: #7b878b;
+  font-size: 8px;
+  font-weight: 690;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.comparison-selector button.is-active small {
+  color: rgb(255 255 255 / 70%);
 }
 
 .comparison-section {
@@ -902,6 +1131,27 @@ ol {
 
 .benchmark-flow .flow-output small {
   color: rgb(255 255 255 / 72%);
+}
+
+.benchmark-video-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: -4px 0 13px;
+  color: #68757a;
+  font-size: 10px;
+}
+
+.benchmark-video-note span {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  color: var(--blue);
+  background: var(--blue-soft);
+  border-radius: 999px;
+  font-size: 8px;
+  font-weight: 820;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
 .benchmark-rail {
@@ -1329,6 +1579,25 @@ html.js [data-reveal].is-visible {
     padding-inline: 15px;
   }
 
+  .policy-video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .policy-video-card:last-child {
+    width: calc(50% - 9px);
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .method-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-selector {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
   .benchmark-summary {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1415,6 +1684,19 @@ html.js [data-reveal].is-visible {
 
   .contribution-list li:last-child {
     border-bottom: 0;
+  }
+
+  .policy-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-video-card:last-child {
+    width: 100%;
+    grid-column: auto;
+  }
+
+  .comparison-selector {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .chart-toolbar {
@@ -1542,6 +1824,22 @@ html.js [data-reveal].is-visible {
   .policy-video-grid,
   .real-video-grid {
     grid-template-columns: 1fr;
+  }
+
+  .four-arm-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .comparison-player-caption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
   }
 
   .policy-video-copy {

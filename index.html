@@ -31,10 +31,10 @@
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#method">Method</a>
           <a href="#tasks">Tasks</a>
-          <a href="#results">Results</a>
+          <a href="#four-arm">Four arms</a>
+          <a href="#comparisons">Comparisons</a>
           <a href="#benchmarks">RoboDojo</a>
           <a href="#transfer">Real world</a>
-          <a href="#abstract">Abstract</a>
         </nav>
       </div>
     </header>
@@ -193,68 +193,202 @@
         <div class="shell">
           <div class="section-heading">
             <div>
-              <p class="section-label">Policy rollouts</p>
-              <h2 id="tasks-title">Generated data trains successful policies</h2>
+              <p class="section-label">Simulation</p>
+              <h2 id="tasks-title">Generated trajectories and learned policies</h2>
             </div>
-            <p>Rollouts span bimanual, four-arm, and humanoid systems under Normal and challenging Cross layouts.</p>
+            <p>Representative results across bimanual and humanoid systems. The four-arm experiments are shown separately below.</p>
           </div>
 
-          <div class="policy-video-grid" aria-label="Representative learned-policy rollouts">
+          <div class="policy-video-grid" aria-label="Representative simulation rollouts">
             <article class="policy-video-card" data-reveal>
               <div class="policy-video-frame ratio-four-three">
                 <video id="task-video-bowl" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-bowl-cross-poster.jpg" aria-label="Cross-Arm Bowl Stacking learned-policy rollout">
                   <source src="assets/task-bowl-cross.mp4" type="video/mp4">
                 </video>
-                <span class="video-context">Cross-Arm</span>
+                <span class="video-context">Learned policy</span>
                 <button class="clip-toggle" type="button" data-video="task-video-bowl" aria-label="Pause Cross-Arm Bowl Stacking video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
               <div class="policy-video-copy">
-                <div><p>Two arms · shared workspace</p><h3>Bowl stacking</h3></div>
+                <div><p>Cross-Arm · two arms</p><h3>Bowl stacking</h3></div>
                 <dl><div><dt>Generation</dt><dd>66.7%</dd></div><div><dt>Policy</dt><dd>80%</dd></div></dl>
               </div>
             </article>
 
             <article class="policy-video-card" data-reveal>
               <div class="policy-video-frame ratio-four-three">
-                <video id="task-video-dishware" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-dishware-cross-poster.jpg" aria-label="Cross-Arm Dishware Stacking learned-policy rollout">
+                <video id="task-video-dishware" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-dishware-cross-poster.jpg" aria-label="ScheduleGen-generated Cross-Arm Dishware Stacking trajectory">
                   <source src="assets/task-dishware-cross.mp4" type="video/mp4">
                 </video>
-                <span class="video-context">Cross-Arm</span>
+                <span class="video-context">Generated trajectory</span>
                 <button class="clip-toggle" type="button" data-video="task-video-dishware" aria-label="Pause Cross-Arm Dishware Stacking video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
               <div class="policy-video-copy">
-                <div><p>Two arms · long horizon</p><h3>Dishware stacking</h3></div>
+                <div><p>Cross-Arm · two arms</p><h3>Dishware stacking</h3></div>
                 <dl><div><dt>Generation</dt><dd>68%</dd></div><div><dt>Policy</dt><dd>76%</dd></div></dl>
               </div>
             </article>
 
             <article class="policy-video-card" data-reveal>
-              <div class="policy-video-frame ratio-wide">
-                <video id="task-video-four" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/action-four-arm-poster.jpg" aria-label="Four-arm cube stacking learned-policy rollout">
-                  <source src="assets/action-four-arm.mp4" type="video/mp4">
-                </video>
-                <span class="video-context">Four arms</span>
-                <button class="clip-toggle" type="button" data-video="task-video-four" aria-label="Pause four-arm cube stacking video"><span aria-hidden="true">Ⅱ</span></button>
-              </div>
-              <div class="policy-video-copy">
-                <div><p>Table and bin workspaces</p><h3>Cube stacking</h3></div>
-                <dl><div><dt>Variants</dt><dd>8</dd></div><div><dt>Policy range</dt><dd>30–90%</dd></div></dl>
-              </div>
-            </article>
-
-            <article class="policy-video-card" data-reveal>
-              <div class="policy-video-frame ratio-wide">
+              <div class="policy-video-frame ratio-four-three">
                 <video id="task-video-humanoid" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/action-humanoid-poster.jpg" aria-label="Humanoid Nut Pouring learned-policy rollout">
                   <source src="assets/action-humanoid.mp4" type="video/mp4">
                 </video>
-                <span class="video-context">Humanoid</span>
+                <span class="video-context">Learned policy</span>
                 <button class="clip-toggle" type="button" data-video="task-video-humanoid" aria-label="Pause humanoid Nut Pouring video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
               <div class="policy-video-copy">
-                <div><p>Fixed waist · two layouts</p><h3>Nut pouring</h3></div>
+                <div><p>Humanoid · fixed waist</p><h3>Nut pouring</h3></div>
                 <dl><div><dt>Layouts</dt><dd>2</dd></div><div><dt>Policy range</dt><dd>48–96%</dd></div></dl>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section four-arm-section" id="four-arm" aria-labelledby="four-arm-title">
+        <div class="shell">
+          <div class="section-heading inverse-heading">
+            <div>
+              <p class="section-label">Four-arm system</p>
+              <h2 id="four-arm-title">Concurrent cube stacking with four arms</h2>
+            </div>
+            <p>Table and bin tasks across normal and cross-reach layouts.</p>
+          </div>
+
+          <div class="four-arm-group">
+            <div class="gallery-heading">
+              <div><span>01</span><h3>Cross-reach layouts</h3></div>
+              <p>Synchronized scene and top views</p>
+            </div>
+            <div class="four-arm-grid cross-view-grid" aria-label="Four-arm cross-reach policy rollouts">
+              <article class="four-arm-card" data-reveal>
+                <div class="four-arm-frame">
+                  <video id="four-cross-table-d1" class="ambient-video" data-autoplay muted loop playsinline preload="none" poster="assets/four-arm-cross-table-d1-poster.jpg" aria-label="Four-arm cross-reach table cube stacking, distribution one">
+                    <source src="assets/four-arm-cross-table-d1.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="four-cross-table-d1" aria-label="Pause four-arm table distribution one video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <h4>Table <span>Distribution I</span></h4>
+              </article>
+              <article class="four-arm-card" data-reveal>
+                <div class="four-arm-frame">
+                  <video id="four-cross-table-d2" class="ambient-video" data-autoplay muted loop playsinline preload="none" poster="assets/four-arm-cross-table-d2-poster.jpg" aria-label="Four-arm cross-reach table cube stacking, distribution two">
+                    <source src="assets/four-arm-cross-table-d2.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="four-cross-table-d2" aria-label="Pause four-arm table distribution two video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <h4>Table <span>Distribution II</span></h4>
+              </article>
+              <article class="four-arm-card" data-reveal>
+                <div class="four-arm-frame">
+                  <video id="four-cross-bin-d1" class="ambient-video" data-autoplay muted loop playsinline preload="none" poster="assets/four-arm-cross-bin-d1-poster.jpg" aria-label="Four-arm cross-reach bin cube stacking, distribution one">
+                    <source src="assets/four-arm-cross-bin-d1.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="four-cross-bin-d1" aria-label="Pause four-arm bin distribution one video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <h4>Bin <span>Distribution I</span></h4>
+              </article>
+              <article class="four-arm-card" data-reveal>
+                <div class="four-arm-frame">
+                  <video id="four-cross-bin-d2" class="ambient-video" data-autoplay muted loop playsinline preload="none" poster="assets/four-arm-cross-bin-d2-poster.jpg" aria-label="Four-arm cross-reach bin cube stacking, distribution two">
+                    <source src="assets/four-arm-cross-bin-d2.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="four-cross-bin-d2" aria-label="Pause four-arm bin distribution two video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <h4>Bin <span>Distribution II</span></h4>
+              </article>
+            </div>
+          </div>
+
+          <div class="four-arm-group normal-group">
+            <div class="gallery-heading">
+              <div><span>02</span><h3>Normal layouts</h3></div>
+              <p>Side and top views of successful policy rollouts</p>
+            </div>
+            <div class="four-arm-grid normal-view-grid" aria-label="Four-arm normal-layout policy rollouts">
+              <article class="four-arm-card" data-reveal>
+                <div class="four-arm-frame">
+                  <video id="four-normal-table-side" class="ambient-video" data-autoplay muted loop playsinline preload="none" poster="assets/four-arm-normal-table-side-poster.jpg" aria-label="Four-arm normal table cube stacking, side view">
+                    <source src="assets/four-arm-normal-table-side.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="four-normal-table-side" aria-label="Pause normal table side-view video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <h4>Table <span>Side view</span></h4>
+              </article>
+              <article class="four-arm-card" data-reveal>
+                <div class="four-arm-frame">
+                  <video id="four-normal-table-top" class="ambient-video" data-autoplay muted loop playsinline preload="none" poster="assets/four-arm-normal-table-top-poster.jpg" aria-label="Four-arm normal table cube stacking, top view">
+                    <source src="assets/four-arm-normal-table-top.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="four-normal-table-top" aria-label="Pause normal table top-view video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <h4>Table <span>Top view</span></h4>
+              </article>
+              <article class="four-arm-card" data-reveal>
+                <div class="four-arm-frame">
+                  <video id="four-normal-bin-side" class="ambient-video" data-autoplay muted loop playsinline preload="none" poster="assets/four-arm-normal-bin-side-poster.jpg" aria-label="Four-arm normal bin cube stacking, side view">
+                    <source src="assets/four-arm-normal-bin-side.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="four-normal-bin-side" aria-label="Pause normal bin side-view video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <h4>Bin <span>Side view</span></h4>
+              </article>
+              <article class="four-arm-card" data-reveal>
+                <div class="four-arm-frame">
+                  <video id="four-normal-bin-top" class="ambient-video" data-autoplay muted loop playsinline preload="none" poster="assets/four-arm-normal-bin-top-poster.jpg" aria-label="Four-arm normal bin cube stacking, top view">
+                    <source src="assets/four-arm-normal-bin-top.mp4" type="video/mp4">
+                  </video>
+                  <button class="clip-toggle" type="button" data-video="four-normal-bin-top" aria-label="Pause normal bin top-view video"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
+                <h4>Bin <span>Top view</span></h4>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section comparison-video-section" id="comparisons" aria-labelledby="comparisons-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Qualitative comparison</p>
+              <h2 id="comparisons-title">DexMimicGen vs. ScheduleGen</h2>
+            </div>
+            <p>Side-by-side data-generation rollouts across seven task variants.</p>
+          </div>
+
+          <div class="method-comparison" data-reveal>
+            <div class="comparison-player-wrap">
+              <video
+                id="method-comparison-video"
+                class="ambient-video"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                controls
+                preload="metadata"
+                poster="assets/compare-cross-dishware-poster.jpg"
+                controlslist="nodownload noremoteplayback"
+                aria-label="DexMimicGen and ScheduleGen comparison for Cross-Arm Dishware Stacking"
+              >
+                <source src="assets/compare-cross-dishware.mp4" type="video/mp4">
+              </video>
+              <div class="comparison-player-caption">
+                <p id="comparison-video-title">Dishware stacking</p>
+                <span id="comparison-video-layout">Cross-Arm layout</span>
+              </div>
+            </div>
+
+            <div class="comparison-selector" role="group" aria-label="Select comparison task">
+              <button type="button" data-comparison-src="assets/compare-cross-bowl.mp4" data-comparison-poster="assets/compare-cross-bowl-poster.jpg" data-comparison-title="Bowl stacking" data-comparison-layout="Cross-Arm layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cross-Arm Bowl Stacking" aria-pressed="false"><span>Bowl stacking</span><small>Cross-Arm</small></button>
+              <button type="button" class="is-active" data-comparison-src="assets/compare-cross-dishware.mp4" data-comparison-poster="assets/compare-cross-dishware-poster.jpg" data-comparison-title="Dishware stacking" data-comparison-layout="Cross-Arm layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cross-Arm Dishware Stacking" aria-pressed="true"><span>Dishware stacking</span><small>Cross-Arm</small></button>
+              <button type="button" data-comparison-src="assets/compare-cross-cube-table.mp4" data-comparison-poster="assets/compare-cross-cube-table-poster.jpg" data-comparison-title="Cube stacking" data-comparison-layout="Cross-Arm table" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cross-Arm table cube stacking" aria-pressed="false"><span>Cube stacking</span><small>Cross-Arm table</small></button>
+              <button type="button" data-comparison-src="assets/compare-cross-cube-bin.mp4" data-comparison-poster="assets/compare-cross-cube-bin-poster.jpg" data-comparison-title="Cube stacking" data-comparison-layout="Cross-Arm bin" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cross-Arm bin cube stacking" aria-pressed="false"><span>Cube stacking</span><small>Cross-Arm bin</small></button>
+              <button type="button" data-comparison-src="assets/compare-dishware-normal.mp4" data-comparison-poster="assets/compare-dishware-normal-poster.jpg" data-comparison-title="Dishware stacking" data-comparison-layout="Normal layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Normal Dishware Stacking" aria-pressed="false"><span>Dishware stacking</span><small>Normal</small></button>
+              <button type="button" data-comparison-src="assets/compare-dishware-cup-cross.mp4" data-comparison-poster="assets/compare-dishware-cup-cross-poster.jpg" data-comparison-title="Dishware stacking" data-comparison-layout="Cup-Cross layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cup-Cross Dishware Stacking" aria-pressed="false"><span>Dishware stacking</span><small>Cup Cross</small></button>
+              <button type="button" data-comparison-src="assets/compare-dishware-both-cross.mp4" data-comparison-poster="assets/compare-dishware-both-cross-poster.jpg" data-comparison-title="Dishware stacking" data-comparison-layout="Both-Cross layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Both-Cross Dishware Stacking" aria-pressed="false"><span>Dishware stacking</span><small>Both Cross</small></button>
+            </div>
           </div>
         </div>
       </section>
@@ -337,7 +471,7 @@
         <div class="shell">
           <div class="section-heading benchmark-heading">
             <div>
-              <p class="section-label">RoboDojo transfer</p>
+              <p class="section-label">RoboDojo data generation</p>
               <h2 id="benchmark-title">Five demonstrations become 500 per task</h2>
             </div>
             <div class="rail-controls" aria-label="RoboDojo task carousel controls">
@@ -356,10 +490,12 @@
             <div class="flow-output"><span>Output</span><strong>500 demonstrations</strong><small>for each of 7 tasks</small></div>
           </div>
 
+          <p class="benchmark-video-note"><span>Shown below</span> Successful ScheduleGen-generated trajectories. Policy success is reported separately in each card.</p>
+
           <div class="benchmark-rail" id="benchmark-rail" tabindex="0" aria-label="Seven RoboDojo task videos">
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
-                <video id="task-swap-t" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-swap-t-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Swap T">
+                <video id="task-swap-t" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-swap-t-poster.jpg" aria-label="ScheduleGen-generated trajectory for Swap T">
                   <source src="assets/task-swap-t.mp4" type="video/mp4">
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-swap-t" aria-label="Pause Swap T video"><span aria-hidden="true">Ⅱ</span></button>
@@ -368,7 +504,7 @@
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
-                <video id="task-build-tower" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-build-tower-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Build Tower">
+                <video id="task-build-tower" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-build-tower-poster.jpg" aria-label="ScheduleGen-generated trajectory for Build Tower">
                   <source src="assets/task-build-tower.mp4" type="video/mp4">
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-build-tower" aria-label="Pause Build Tower video"><span aria-hidden="true">Ⅱ</span></button>
@@ -377,7 +513,7 @@
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
-                <video id="task-insert-tubes" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-insert-tubes-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Insert Tubes">
+                <video id="task-insert-tubes" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-insert-tubes-poster.jpg" aria-label="ScheduleGen-generated trajectory for Insert Tubes">
                   <source src="assets/task-insert-tubes.mp4" type="video/mp4">
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-insert-tubes" aria-label="Pause Insert Tubes video"><span aria-hidden="true">Ⅱ</span></button>
@@ -386,7 +522,7 @@
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
-                <video id="task-arrange-number" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-arrange-number-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Arrange Largest Number">
+                <video id="task-arrange-number" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-arrange-number-poster.jpg" aria-label="ScheduleGen-generated trajectory for Arrange Largest Number">
                   <source src="assets/task-arrange-number.mp4" type="video/mp4">
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-arrange-number" aria-label="Pause Arrange Largest Number video"><span aria-hidden="true">Ⅱ</span></button>
@@ -395,7 +531,7 @@
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
-                <video id="task-press-number" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-press-number-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Press by Number">
+                <video id="task-press-number" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-press-number-poster.jpg" aria-label="ScheduleGen-generated trajectory for Press by Number">
                   <source src="assets/task-press-number.mp4" type="video/mp4">
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-press-number" aria-label="Pause Press by Number video"><span aria-hidden="true">Ⅱ</span></button>
@@ -404,7 +540,7 @@
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
-                <video id="task-sort-dolls" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-sort-dolls-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Sort Nesting Dolls">
+                <video id="task-sort-dolls" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-sort-dolls-poster.jpg" aria-label="ScheduleGen-generated trajectory for Sort Nesting Dolls">
                   <source src="assets/task-sort-dolls.mp4" type="video/mp4">
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-sort-dolls" aria-label="Pause Sort Nesting Dolls video"><span aria-hidden="true">Ⅱ</span></button>
@@ -413,7 +549,7 @@
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
-                <video id="task-classify" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-classify-objects-poster.jpg" aria-label="ScheduleGen learned-policy rollout for Classify Objects">
+                <video id="task-classify" class="ambient-video" data-autoplay muted loop playsinline preload="metadata" poster="assets/task-classify-objects-poster.jpg" aria-label="ScheduleGen-generated trajectory for Classify Objects">
                   <source src="assets/task-classify-objects.mp4" type="video/mp4">
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-classify" aria-label="Pause Classify Objects video"><span aria-hidden="true">Ⅱ</span></button>

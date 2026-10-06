@@ -127,6 +127,47 @@
     });
   }
 
+  const comparisonVideo = document.getElementById("method-comparison-video");
+  const comparisonSource = comparisonVideo?.querySelector("source");
+  const comparisonTitle = document.getElementById("comparison-video-title");
+  const comparisonLayout = document.getElementById("comparison-video-layout");
+  const comparisonTaskButtons = [
+    ...document.querySelectorAll("[data-comparison-src]"),
+  ];
+
+  comparisonTaskButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const alreadyActive = button.classList.contains("is-active");
+
+      comparisonTaskButtons.forEach((candidate) => {
+        const active = candidate === button;
+        candidate.classList.toggle("is-active", active);
+        candidate.setAttribute("aria-pressed", String(active));
+      });
+
+      if (!comparisonVideo || !comparisonSource || alreadyActive) return;
+
+      comparisonVideo.classList.add("is-switching");
+      comparisonVideo.pause();
+      comparisonSource.src = button.dataset.comparisonSrc;
+      comparisonVideo.poster = button.dataset.comparisonPoster;
+      comparisonVideo.setAttribute("aria-label", button.dataset.comparisonLabel);
+      comparisonVideo.dataset.userPaused = "false";
+      if (comparisonTitle) comparisonTitle.textContent = button.dataset.comparisonTitle;
+      if (comparisonLayout) comparisonLayout.textContent = button.dataset.comparisonLayout;
+
+      comparisonVideo.addEventListener(
+        "loadeddata",
+        () => {
+          comparisonVideo.classList.remove("is-switching");
+          playAmbientVideo(comparisonVideo);
+        },
+        { once: true }
+      );
+      comparisonVideo.load();
+    });
+  });
+
   const comparisonChart = document.getElementById("comparison-chart");
   const metricButtons = [...document.querySelectorAll("[data-chart-metric]")];
   const comparisonBars = comparisonChart
