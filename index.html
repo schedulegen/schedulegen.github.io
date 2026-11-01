@@ -11,7 +11,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="assets/schedulegen-video-poster.jpg" as="image" type="image/jpeg">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script src="script.js?v=task-playback-1" defer></script>
   </head>
 
   <body>
@@ -53,6 +53,7 @@
           <div>
             <h2 id="video-title">ScheduleGen in three minutes</h2>
           </div>
+          <p>Overview and method: 1× · Task videos: 3× playback</p>
         </div>
 
         <div class="main-player" id="main-player">
@@ -84,7 +85,7 @@
           <div><dt>Simulation variants</dt><dd>28</dd></div>
           <div><dt>Mean generation success</dt><dd>79.6<span>%</span></dd></div>
           <div><dt>Mean policy success</dt><dd>65.5<span>%</span></dd></div>
-          <div><dt>Real-world success</dt><dd>65&ndash;80<span>%</span></dd></div>
+          <div><dt>Real-world success</dt><dd>50&ndash;80<span>%</span></dd></div>
         </dl>
       </section>
 
@@ -145,7 +146,7 @@
               <div>
                 <span>03</span>
                 <h3>Simulation to deployment</h3>
-                <p>Evaluated on 28 simulation variants and five real-world tasks with zero-shot transfer.</p>
+                <p>Evaluated on 28 simulation variants and eight real-world variants through sim-to-real and real-to-sim-to-real transfer.</p>
               </div>
             </li>
           </ol>
@@ -385,9 +386,9 @@
               <button type="button" class="is-active" data-comparison-src="assets/compare-cross-dishware.mp4" data-comparison-poster="assets/compare-cross-dishware-poster.jpg" data-comparison-title="Dishware stacking" data-comparison-layout="Cross-Arm layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cross-Arm Dishware Stacking" aria-pressed="true"><span>Dishware stacking</span><small>Cross-Arm</small></button>
               <button type="button" data-comparison-src="assets/compare-cross-cube-table.mp4" data-comparison-poster="assets/compare-cross-cube-table-poster.jpg" data-comparison-title="Cube stacking" data-comparison-layout="Cross-Arm table" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cross-Arm table cube stacking" aria-pressed="false"><span>Cube stacking</span><small>Cross-Arm table</small></button>
               <button type="button" data-comparison-src="assets/compare-cross-cube-bin.mp4" data-comparison-poster="assets/compare-cross-cube-bin-poster.jpg" data-comparison-title="Cube stacking" data-comparison-layout="Cross-Arm bin" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cross-Arm bin cube stacking" aria-pressed="false"><span>Cube stacking</span><small>Cross-Arm bin</small></button>
-              <button type="button" data-comparison-src="assets/compare-dishware-normal.mp4" data-comparison-poster="assets/compare-dishware-normal-poster.jpg" data-comparison-title="Dishware stacking" data-comparison-layout="Normal layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Normal Dishware Stacking" aria-pressed="false"><span>Dishware stacking</span><small>Normal</small></button>
-              <button type="button" data-comparison-src="assets/compare-dishware-cup-cross.mp4" data-comparison-poster="assets/compare-dishware-cup-cross-poster.jpg" data-comparison-title="Dishware stacking" data-comparison-layout="Cup-Cross layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cup-Cross Dishware Stacking" aria-pressed="false"><span>Dishware stacking</span><small>Cup Cross</small></button>
-              <button type="button" data-comparison-src="assets/compare-dishware-both-cross.mp4" data-comparison-poster="assets/compare-dishware-both-cross-poster.jpg" data-comparison-title="Dishware stacking" data-comparison-layout="Both-Cross layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Both-Cross Dishware Stacking" aria-pressed="false"><span>Dishware stacking</span><small>Both Cross</small></button>
+              <button type="button" data-comparison-src="assets/compare-dishware-normal.mp4" data-comparison-poster="assets/compare-dishware-normal-poster.jpg" data-comparison-title="Throwaway trash" data-comparison-layout="Normal layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Normal Throwaway Trash" aria-pressed="false"><span>Throwaway trash</span><small>Normal</small></button>
+              <button type="button" data-comparison-src="assets/compare-dishware-cup-cross.mp4" data-comparison-poster="assets/compare-dishware-cup-cross-poster.jpg" data-comparison-title="Throwaway trash" data-comparison-layout="Cup-Cross layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cup-Cross Throwaway Trash" aria-pressed="false"><span>Throwaway trash</span><small>Cup Cross</small></button>
+              <button type="button" data-comparison-src="assets/compare-dishware-both-cross.mp4" data-comparison-poster="assets/compare-dishware-both-cross-poster.jpg" data-comparison-title="Throwaway trash" data-comparison-layout="Cup + Bin Cross layout" data-comparison-label="DexMimicGen and ScheduleGen comparison for Cup and Bin Cross Throwaway Trash" aria-pressed="false"><span>Throwaway trash</span><small>Cup + Bin Cross</small></button>
             </div>
           </div>
         </div>
@@ -490,7 +491,7 @@
             <div class="flow-output"><span>Output</span><strong>500 demonstrations</strong><small>for each of 7 tasks</small></div>
           </div>
 
-          <p class="benchmark-video-note"><span>Shown below</span> Successful ScheduleGen-generated trajectories. Policy success is reported separately in each card.</p>
+          <p class="benchmark-video-note"><span>Shown below</span> Successful ScheduleGen-generated trajectories. Cards report policy success over 20 held-out Nominal episodes per task.</p>
 
           <div class="benchmark-rail" id="benchmark-rail" tabindex="0" aria-label="Seven RoboDojo task videos">
             <article class="benchmark-card">
@@ -500,7 +501,7 @@
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-swap-t" aria-label="Pause Swap T video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
-              <div><h3>Swap T</h3><p><b>78.0%</b> generation · <b>25%</b> policy</p></div>
+              <div><h3>Swap T</h3><p><b>78.0%</b> generation · <b>25%</b> Nominal policy</p></div>
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
@@ -509,7 +510,7 @@
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-build-tower" aria-label="Pause Build Tower video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
-              <div><h3>Build Tower</h3><p><b>91.7%</b> generation · <b>45%</b> policy</p></div>
+              <div><h3>Build Tower</h3><p><b>91.7%</b> generation · <b>45%</b> Nominal policy</p></div>
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
@@ -518,7 +519,7 @@
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-insert-tubes" aria-label="Pause Insert Tubes video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
-              <div><h3>Insert Tubes</h3><p><b>94.2%</b> generation · <b>45%</b> policy</p></div>
+              <div><h3>Insert Tubes</h3><p><b>94.2%</b> generation · <b>45%</b> Nominal policy</p></div>
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
@@ -527,7 +528,7 @@
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-arrange-number" aria-label="Pause Arrange Largest Number video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
-              <div><h3>Arrange Largest Number</h3><p><b>96.5%</b> generation · <b>50%</b> policy</p></div>
+              <div><h3>Arrange Largest Number</h3><p><b>96.5%</b> generation · <b>50%</b> Nominal policy</p></div>
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
@@ -536,7 +537,7 @@
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-press-number" aria-label="Pause Press by Number video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
-              <div><h3>Press by Number</h3><p><b>100%</b> generation · <b>40%</b> policy</p></div>
+              <div><h3>Press by Number</h3><p><b>100%</b> generation · <b>40%</b> Nominal policy</p></div>
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
@@ -545,7 +546,7 @@
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-sort-dolls" aria-label="Pause Sort Nesting Dolls video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
-              <div><h3>Sort Nesting Dolls</h3><p><b>88.0%</b> generation · <b>65%</b> policy</p></div>
+              <div><h3>Sort Nesting Dolls</h3><p><b>88.0%</b> generation · <b>65%</b> Nominal policy</p></div>
             </article>
             <article class="benchmark-card">
               <div class="benchmark-video-wrap">
@@ -554,7 +555,7 @@
                 </video>
                 <button class="clip-toggle" type="button" data-video="task-classify" aria-label="Pause Classify Objects video"><span aria-hidden="true">Ⅱ</span></button>
               </div>
-              <div><h3>Classify Objects</h3><p><b>75.5%</b> generation · <b>65%</b> policy</p></div>
+              <div><h3>Classify Objects</h3><p><b>75.5%</b> generation · <b>65%</b> Nominal policy</p></div>
             </article>
           </div>
 
@@ -583,7 +584,7 @@
               <p class="section-label">Real-world transfer</p>
               <h2 id="transfer-title">Two routes to the real robot</h2>
             </div>
-            <p>Every policy is evaluated over 20 hardware episodes and trained in simulation without real-world fine-tuning. <span class="speed-note">1x speed</span></p>
+            <p>Every policy is evaluated over 20 hardware episodes and trained in simulation without real-world fine-tuning. <span class="speed-note">3× playback</span></p>
           </div>
 
           <div class="transfer-route">
@@ -659,7 +660,7 @@
                   </video>
                   <button class="clip-toggle" type="button" data-video="real-trash-normal" aria-label="Pause Throwaway Trash Normal-layout video"><span aria-hidden="true">Ⅱ</span></button>
                 </div>
-                <div><p>Throwaway trash</p><span>Cup and bin on nominal sides</span><strong class="variant-badge">Normal</strong></div>
+                <div><p>Throwaway trash</p><span>Normal layout</span><strong>75%</strong></div>
               </article>
 
               <article class="real-video-card" data-reveal>
@@ -669,7 +670,7 @@
                   </video>
                   <button class="clip-toggle" type="button" data-video="real-trash-cup-cross" aria-label="Pause Throwaway Trash Cup-Cross video"><span aria-hidden="true">Ⅱ</span></button>
                 </div>
-                <div><p>Throwaway trash</p><span>Cup assignment crosses centerline</span><strong class="variant-badge">Cup Cross</strong></div>
+                <div><p>Throwaway trash</p><span>Cup Cross layout</span><strong>70%</strong></div>
               </article>
 
               <article class="real-video-card" data-reveal>
@@ -679,7 +680,7 @@
                   </video>
                   <button class="clip-toggle" type="button" data-video="real-trash-both-cross" aria-label="Pause Throwaway Trash Both-Cross video"><span aria-hidden="true">Ⅱ</span></button>
                 </div>
-                <div><p>Throwaway trash</p><span>Cup and bin assignments cross</span><strong class="variant-badge">Both Cross</strong></div>
+                <div><p>Throwaway trash</p><span>Cup + Bin Cross layout</span><strong>50%</strong></div>
               </article>
             </div>
           </div>
@@ -695,7 +696,7 @@
           <div class="abstract-copy">
             <p>Multi-arm robot platforms, including bimanual and humanoid robots, have the capability to complete tasks with lower cycle times than single-arm systems, but they are more difficult to safely control due to the presence of multi-arm constraints. Imitation learning from demonstrations is effective for controlling bimanual systems; however, it requires large datasets of demonstrations, which are expensive to collect via teleoperation.</p>
             <p>Automated demonstration generation can alleviate this burden by synthesizing new demonstrations from a handful of source demonstrations, but existing algorithms ignore multi-arm constraints and as a result often induce unsafe and unsuccessful behaviors. We address this limitation by introducing ScheduleGen, an integrated planning &amp; scheduling algorithm for multi-arm demonstration generation. ScheduleGen first plans single-robot behavior that adapts object-centric skill demonstrations and then safely coordinates the robots by framing scheduling as a Mixed Integer Linear Programming (MILP) with constraints evaluated using GPU-accelerated collision checking.</p>
-            <p>We evaluate ScheduleGen on 28 simulation task variants, including seven externally authored RoboDojo tasks and settings inaccessible to prior systems; it achieves 79.6% mean data-generation success and trains policies with 65.5% mean success. These policies outperform the DexMimicGen baseline on almost all the tasks and achieve 65&ndash;80% success across five real-world tasks through zero-shot sim-to-real and real-to-sim-to-real transfer.</p>
+            <p>We evaluate ScheduleGen on 28 simulation task variants, including seven externally authored RoboDojo tasks and settings inaccessible to prior systems; it achieves 79.6% mean data-generation success and trains policies with 65.5% mean success. These policies outperform the DexMimicGen baseline on almost all the tasks and achieve 50&ndash;80% success across eight real-world variants through zero-shot sim-to-real and real-to-sim-to-real transfer.</p>
           </div>
         </div>
       </section>

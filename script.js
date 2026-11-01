@@ -5,6 +5,16 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  document.querySelectorAll("video").forEach((video) => {
+    const rate = video.id === "research-video" || video.id === "clip-method" ? 1 : 3;
+    const setPlaybackSpeed = () => {
+      video.defaultPlaybackRate = rate;
+      video.playbackRate = rate;
+    };
+    setPlaybackSpeed();
+    video.addEventListener("loadedmetadata", setPlaybackSpeed);
+  });
+
   const isInViewport = (element) => {
     const rect = element.getBoundingClientRect();
     return rect.bottom > 0 && rect.top < window.innerHeight;
